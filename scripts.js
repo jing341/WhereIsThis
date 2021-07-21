@@ -4,7 +4,7 @@
 // the link to your model provided by Teachable Machine export panel
 const URL = "https://teachablemachine.withgoogle.com/models/Y6AjzvFqZ/";
 
-let model, webcam, labelContainer, maxPredictions;
+let model, webcam, labelContainer, maxPredictions, WhereIsThis;
 
 // Load the image model and setup the webcam
 async function init() {
@@ -39,6 +39,22 @@ async function predict() {
   // predict can take in an image, video or canvas html element
   const prediction = await model.predict(webcam.canvas);
   let sea, mount, city;
+  if (prediction[0]) {
+    switch (prediction[0].className) {
+      case "바다":
+        sea = prediction[0].probability;
+        break;
+
+      case "도시":
+        city = prediction[0].probability;
+        break;
+
+      case "산":
+        mount = prediction[0].probability;
+        break;
+    }
+  }
+
   if (prediction[1]) {
     switch (prediction[1].className) {
       case "바다":
@@ -71,23 +87,19 @@ async function predict() {
     }
   }
 
-  if (prediction[3]) {
-    switch (prediction[3].className) {
-      case "바다":
-        sea = prediction[3].probability;
-        break;
-
-      case "도시":
-        city = prediction[3].probability;
-        break;
-
-      case "산":
-        mount = prediction[3].probability;
-        break;
+  if (sea > city) {
+    if (sea > mount) {
+      WhereIsThis = "바다";
+    } else {
+      WhereIsThis = "산";
     }
+  } else if (city > mount) {
+    WhereIsThis = "도시";
+  } else {
+    WhereIsThis = "산";
   }
 
-  console.log(mount, sea, city);
+  document.getElementById("where-text").innerText = WhereIsThis;
 }
 
 init();
