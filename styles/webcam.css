@@ -1,0 +1,6 @@
+#webcam-container {
+  display: flex;
+  width: fit-content;
+  justify-content: center;
+  border: 1px solid rgb(170, 170, 170);
+}
