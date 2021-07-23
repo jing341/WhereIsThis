@@ -1,0 +1,9 @@
+img {
+  width: 30%;
+  height: 20%;
+  justify-content: center;
+  position: absolute;
+  top: 44%;
+  display: flex;
+  border: 1.5px solid rgb(182, 182, 182);
+}

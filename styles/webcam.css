@@ -1,6 +1,12 @@
 #webcam-container {
+  margin-top: 10%;
   display: flex;
-  width: fit-content;
+  width: 202px;
+  height: 201px;
   justify-content: center;
   border: 1px solid rgb(170, 170, 170);
+}
+
+#webcam-container canvas {
+  justify-content: center;
 }

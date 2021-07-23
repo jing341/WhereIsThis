@@ -3,6 +3,12 @@ const URL = "https://teachablemachine.withgoogle.com/models/Y6AjzvFqZ/";
 let model, webcam, labelContainer, maxPredictions, WhereIsThis;
 
 async function init() {
+  document
+    .querySelector("button")
+    .parentNode.removeChild(document.querySelector("button"));
+  document
+    .getElementById("start-span")
+    .parentNode.removeChild(document.getElementById("start-span"));
   const modelURL = URL + "model.json";
   const metadataURL = URL + "metadata.json";
 
@@ -44,5 +50,3 @@ async function predict() {
 
   tellFunction(WhereIsThis);
 }
-
-init();

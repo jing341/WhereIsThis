@@ -1,1 +1,60 @@
+#main {
+  width: 50%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  margin-left: 25%;
+  margin-top: 13%;
+  margin-bottom: 0%;
+  border: 1.5px solid rgb(167, 167, 167);
+}
 
+@media screen and (min-width: 1600px) {
+  #main {
+    margin-top: 5%;
+    height: 80%;
+    width: 40%;
+    margin-left: 29%;
+  }
+  #webcam-container {
+    margin-top: 7%;
+  }
+  img {
+    width: 40%;
+    height: 20%;
+  }
+}
+
+#where-text {
+  position: absolute;
+  top: 70%;
+}
+
+button {
+  color: white;
+  border: 1.5px solid rgb(68, 165, 255);
+  background-color: skyblue;
+  height: 25%;
+  width: 40%;
+  margin-top: 35%;
+  cursor: pointer;
+}
+
+button:hover {
+  height: 28%;
+  width: 45%;
+}
+
+#start-span {
+  position: absolute;
+  top: 57%;
+}
+
+#warning {
+  color: rgb(226, 226, 0);
+  text-shadow: 0 0 0.1em, 0 0 0.3em;
+  width: 230px;
+  position: absolute;
+  top: 1%;
+  right: 0%;
+}
