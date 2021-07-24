@@ -1,5 +1,4 @@
 const tell = [];
-
 const tellValue = Math.floor(Math.random() * 3);
 
 function tellFunction(where) {

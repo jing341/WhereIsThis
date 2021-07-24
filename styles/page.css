@@ -30,8 +30,7 @@
   top: 70%;
 }
 
-button,
-input {
+button {
   color: white;
   border: 1.5px solid rgb(68, 165, 255);
   background-color: skyblue;
@@ -41,8 +40,7 @@ input {
   cursor: pointer;
 }
 
-button:hover,
-input:hover {
+button:hover {
   height: 28%;
   width: 45%;
 }
